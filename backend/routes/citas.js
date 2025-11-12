@@ -10,6 +10,7 @@ router.get('/', async (req, res) => {
       LEFT JOIN Servicios s ON c.id_servicio = s.id_servicio
       LEFT JOIN Usuarios u ON c.id_cliente = u.id_usuario
       LEFT JOIN Usuarios u2 ON s.id_emprendedor = u2.id_usuario
+      WHERE c.estado = 'pendiente' || 'confirmada'
       ORDER BY c.fecha_cita, c.hora_cita`);
     res.json(rows);
   } catch (err) {

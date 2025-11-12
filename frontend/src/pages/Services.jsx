@@ -11,7 +11,7 @@ export default function Services(){
       <div className="grid">
         {services.map(s=> (
           <div className="card service" key={s.id_servicio}>
-            <img src="/public/service-placeholder.png" alt="" className="service-img"/>
+            <img src="/Services.jpg" alt="" className="service-img"/>
             <h3>{s.nombre_servicio}</h3>
             <p>{s.descripcion}</p>
             <p><strong>{s.duracion_minutos} min</strong> • ${s.precio}</p>

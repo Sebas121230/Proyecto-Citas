@@ -12,7 +12,7 @@ export default function Home(){
         </div>
       </div>
       <div className="hero-right">
-        <img src="/hero-plant.svg" alt="hero"/>
+        <img src="/Home.jpg" alt="hero"/>
       </div>
     </section>
   )

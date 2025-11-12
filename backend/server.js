@@ -18,6 +18,28 @@ app.use('/api/servicios', require('./routes/servicios'));
 app.use('/api/citas', require('./routes/citas'));
 app.use('/api/mensajes', require('./routes/mensajes'));
 app.use('/api/estadisticas', require('./routes/estadisticas'));
+app.use('/api/auth', require('./routes/auth'));
+
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    [
+      "default-src 'self';",
+      "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://code.jivosite.com https://telemetry.jivosite.com;",
+      "connect-src 'self' https://code.jivosite.com https://telemetry.jivosite.com wss://*.jivosite.com https://*.jivosite.com;",
+      "style-src 'self' 'unsafe-inline' https://code.jivosite.com https://*.jivosite.com http://code.jivosite.com/css/a445eff/widget.css;",
+      "img-src 'self' data: https://code.jivosite.com https://*.jivosite.com;",
+      "frame-src https://code.jivosite.com https://*.jivosite.com;"
+    ].join(" ")
+  );
+  next();
+});
+
+app.use((req, res, next) => {
+  res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
+  res.setHeader("Cross-Origin-Embedder-Policy", "unsafe-none");
+  next();
+});
 
 // Serve frontend build
 app.use(express.static(path.join(__dirname, "../frontend/dist")));

@@ -1,2 +1,47 @@
 @import "tailwindcss";
 @import "./custom.css";
+
+.auth-container {
+  max-width: 380px;
+  margin: 80px auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 10px;
+  background: #0078ff;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.auth-form button:hover {
+  background: #005ecc;
+}
+
+.auth-toggle {
+  margin-top: 1rem;
+}
+
+.auth-toggle button {
+  background: none;
+  border: none;
+  color: #0078ff;
+  cursor: pointer;
+}
