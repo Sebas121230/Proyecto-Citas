@@ -56,28 +56,27 @@ const Citas = () => {
             <table className="w-full border-collapse">
               <thead>
                 <tr className="bg-blue-600 text-white text-left text-sm uppercase">
-                  <th className="py-3 px-5">#</th>
-                  <th className="py-3 px-5">Usuario</th>
-                  <th className="py-3 px-5">Servicio</th>
-                  <th className="py-3 px-5">Fecha</th>
-                  <th className="py-3 px-5">Hora</th>
+                  <th className="py-9 px-15">#</th>
+                  <th className="py-9 px-15">Usuario</th>
+                  <th className="py-9 px-15">Servicio</th>
+                  <th className="py-9 px-15">Fecha</th>
+                  <th className="py-9 px-15">Hora</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {citasFiltradas.map((cita, i) => (
                   <tr
                     key={i}
-                    className="hover:bg-blue-50 transition-colors duration-150"
-                  >
-                    <td className="py-3 px-5">{cita.id_cita}</td>
-                    <td className="py-3 px-5 font-medium text-gray-700">
+                    className="hover:bg-blue-50 transition-colors duration-150">
+                    <td className="py-9 px-15">{cita.id_cita}</td>
+                    <td className="py-9 px-15 font-medium text-gray-700">
                       {cita.cliente_nombre}
                     </td>
-                    <td className="py-3 px-5">{cita.nombre_servicio}</td>
-                    <td className="py-3 px-5">
+                    <td className="py-9 px-15">{cita.nombre_servicio}</td>
+                    <td className="py-9 px-15">
                       {new Date(cita.fecha_cita).toLocaleDateString("es-CO")}
                     </td>
-                    <td className="py-3 px-5">{cita.hora_cita}</td>
+                    <td className="py-9 px-15">{cita.hora_cita}</td>
                   </tr>
                 ))}
               </tbody>

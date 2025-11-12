@@ -20,11 +20,9 @@ app.use('/api/mensajes', require('./routes/mensajes'));
 app.use('/api/estadisticas', require('./routes/estadisticas'));
 
 // Serve frontend build
-const frontendPath = path.join(__dirname, '..', 'frontend', 'dist');
-app.use(express.static(frontendPath));
-app.get('*', (req, res) => {
-  if (req.path.startsWith('/api')) return res.status(404).json({ error: 'API route not found' });
-  res.sendFile(path.join(frontendPath, 'index.html'));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
 });
 
 const PORT = process.env.PORT || 3000;
