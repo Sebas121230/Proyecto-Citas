@@ -5,7 +5,7 @@ const pool = require('../db/connection');
 router.post('/', async (req, res) => {
   const { id_remitente, id_destinatario, mensaje } = req.body;
   try {
-    const [result] = await pool.query('INSERT INTO Mensajes (id_remitente, id_destinatario, mensaje) VALUES (?, ?, ?)', [id_remitente, id_destinatario, mensaje]);
+    const [result] = await pool.query('INSERT INTO mensajes (id_remitente, id_destinatario, mensaje) VALUES (?, ?, ?)', [id_remitente, id_destinatario, mensaje]);
     res.json({ id: result.insertId });
   } catch (err) {
     console.error(err);
