@@ -1,47 +1,70 @@
 @import "tailwindcss";
 @import "./custom.css";
 
+.auth-background {
+  width: 100%;
+  height: 100vh;
+  background-image: url('/fondo.avif');   /* 🔹 Colocas tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .auth-container {
-  max-width: 380px;
-  margin: 80px auto;
-  background: white;
-  padding: 2rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  text-align: center;
+  background: rgba(255, 255, 255, 0.85);   /* 🔹 efecto glass ligero */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  width: 350px;
+  backdrop-filter: blur(5px);
 }
 
 .auth-form input {
   width: 100%;
+  margin-bottom: 12px;
   padding: 10px;
-  margin: 8px 0;
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid #ccc;
 }
 
 .auth-form button {
   width: 100%;
-  padding: 10px;
-  background: #0078ff;
+  padding: 12px;
+  background-color: #0077ff;
+  color: #fff;
   border: none;
-  color: white;
-  border-radius: 8px;
+  border-radius: 6px;
+  font-size: 16px;
   cursor: pointer;
-  font-weight: bold;
-  margin-top: 10px;
 }
 
 .auth-form button:hover {
-  background: #005ecc;
+  background-color: #005fcc;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;         /* 🔹 Separación entre nombre y botón */
 }
 
-.auth-toggle {
-  margin-top: 1rem;
+.user-info span {
+  font-weight: 600;
+  font-size: 16px;
 }
 
-.auth-toggle button {
-  background: none;
+.user-info button {
+  padding: 6px 12px;
   border: none;
-  color: #0078ff;
+  background-color: #d9534f;
+  color: white;
+  border-radius: 6px;
   cursor: pointer;
+}
+
+.user-info button:hover {
+  background-color: #c9302c;
 }

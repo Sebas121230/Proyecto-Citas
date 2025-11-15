@@ -41,51 +41,54 @@ export default function Auth({ onLogin }) {
   }
 
   return (
-    <div className="auth-container">
-      <h2>{modo === 'login' ? 'Iniciar Sesión' : 'Registrarse'}</h2>
-      <form onSubmit={handleSubmit} className="auth-form">
-        {modo === 'register' && (
+    <div className="auth-background">
+      <div className="auth-container">
+        <h2>{modo === 'login' ? 'Iniciar Sesión' : 'Registrarse'}</h2>
+
+        <form onSubmit={handleSubmit} className="auth-form">
+          {modo === 'register' && (
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Nombre completo"
+              onChange={handleChange}
+              required
+            />
+          )}
           <input
-            type="text"
-            name="nombre"
-            placeholder="Nombre completo"
+            type="email"
+            name="correo"
+            placeholder="Correo electrónico"
             onChange={handleChange}
             required
           />
-        )}
-        <input
-          type="email"
-          name="correo"
-          placeholder="Correo electrónico"
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="contrasena"
-          placeholder="Contraseña"
-          onChange={handleChange}
-          required
-        />
-        {modo === 'register' && (
           <input
-            type="text"
-            name="telefono"
-            placeholder="Teléfono"
+            type="password"
+            name="contrasena"
+            placeholder="Contraseña"
             onChange={handleChange}
+            required
           />
-        )}
-        <button type="submit">
-          {modo === 'login' ? 'Entrar' : 'Registrarse'}
-        </button>
-      </form>
+          {modo === 'register' && (
+            <input
+              type="text"
+              name="telefono"
+              placeholder="Teléfono"
+              onChange={handleChange}
+            />
+          )}
+          <button type="submit">
+            {modo === 'login' ? 'Entrar' : 'Registrarse'}
+          </button>
+        </form>
 
-      <p className="auth-toggle">
-        {modo === 'login'
-          ? <>¿No tienes cuenta? <button onClick={() => setModo('register')}>Regístrate aquí</button></>
-          : <>¿Ya tienes cuenta? <button onClick={() => setModo('login')}>Inicia sesión</button></>
-        }
-      </p>
+        <p className="auth-toggle">
+          {modo === 'login'
+            ? <>¿No tienes cuenta? <button onClick={() => setModo('register')}>Regístrate aquí</button></>
+            : <>¿Ya tienes cuenta? <button onClick={() => setModo('login')}>Inicia sesión</button></>
+          }
+        </p>
+      </div>
     </div>
   )
 }

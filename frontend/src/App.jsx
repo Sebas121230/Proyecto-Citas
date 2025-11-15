@@ -4,7 +4,6 @@ import Home from './pages/Home'
 import Services from './pages/Services'
 import Book from './pages/Book'
 import Dashboard from './pages/Dashboard'
-import Chat from './pages/Chat'
 import Dates from './pages/Dates'
 import Auth from './pages/Auth'
 import './styles.css'
@@ -20,7 +19,6 @@ export default function App() {
     { id: 'services', label: 'Servicios' },
     { id: 'book', label: 'Agendar' },
     { id: 'dash', label: 'Estadísticas' },
-    { id: 'chat', label: 'Chat' },
     { id: 'dates', label: 'Citas' }
   ]
 
@@ -51,7 +49,6 @@ export default function App() {
         {active === 'services' && <Services />}
         {active === 'book' && <Book />}
         {active === 'dash' && <Dashboard />}
-        {active === 'chat' && <Chat />}
         {active === 'dates' && <Dates />}
       </main>
 
